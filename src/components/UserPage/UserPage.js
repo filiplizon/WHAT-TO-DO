@@ -1,5 +1,10 @@
 import React from 'react';
+import Navigation from 'components/Navigation/Navigation';
 
-const UserPage = () => <h2>UserPage</h2>;
+const UserPage = () => (
+  <>
+    <Navigation />
+  </>
+);
 
 export default UserPage;
