@@ -6,11 +6,45 @@ export default {
   },
   fonts: {
     body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    heading: 'inherit',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   fontWeights: {
     regular: 400,
     bold: 700,
+  },
+  buttons: {
+    primary: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      p: '5px',
+      borderRadius: '50%',
+      bg: 'primary',
+      color: 'background',
+      outlineColor: 'primary',
+      transitionDuration: '.2s',
+      cursor: 'pointer',
+      '&:hover': {
+        transform: 'scale(1.1)',
+      },
+    },
+    secondary: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      p: '5px',
+      borderRadius: '50%',
+      outlineColor: 'primary',
+      transitionDuration: '.2s',
+      cursor: 'pointer',
+      fontSize: 3,
+      bg: 'background',
+      color: 'primary',
+    },
+  },
+  shadows: {
+    primary: '0 10px 30px -10px hsla(0, 0%, 0%, 0.1)',
   },
   styles: {
     root: {
