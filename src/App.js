@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'theme-ui';
 import theme from 'theme/theme';
-import DetailsPage from 'components/DetailsPage/DetailsPage';
-import UserPage from 'components/UserPage/UserPage';
+import DetailsPage from 'views/DetailsPage/DetailsPage';
+import UserPage from 'views/UserPage/UserPage';
 
 const App = () => (
   <Router>
