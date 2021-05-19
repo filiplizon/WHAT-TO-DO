@@ -43,8 +43,24 @@ export default {
       color: 'primary',
     },
   },
+  forms: {
+    label: {
+      fontWeight: 'bold',
+    },
+    input: {
+      borderBottom: '1px solid',
+      borderColor: 'primary',
+      outlineColor: 'primary',
+    },
+    textarea: {
+      fontFamily: 'body',
+      borderBottom: '1px solid',
+      borderColor: 'primary',
+      outlineColor: 'primary',
+    },
+  },
   shadows: {
-    primary: '0 10px 30px -10px hsla(0, 0%, 0%, 0.1)',
+    primary: '0 10px 30px -10px hsla(0, 0%, 0%, 0.2)',
   },
   styles: {
     root: {
@@ -52,5 +68,5 @@ export default {
       fontWeight: 'regular',
     },
   },
-  breakpoints: ['360px', '768px', '1024px'],
+  breakpoints: ['360px', '768px', '1024px', '1200px'],
 };
