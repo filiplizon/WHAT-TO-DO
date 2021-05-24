@@ -1,89 +1,108 @@
-import React from 'react';
-import { Button, Container, Flex, Paragraph, Textarea, Image, Heading } from '@theme-ui/components';
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
+import { currentItemState } from 'atoms/atoms';
+import { Container, Flex, Paragraph, Image, Heading } from '@theme-ui/components';
 import CloseButton from 'components/CloseButton/CloseButton';
 import Illustration from 'assets/images/illustration.svg';
+import Logo from 'components/Logo/Logo';
 
-const DetailsPage = () => (
-  <>
-    <CloseButton />
-    <Container
-      sx={{
-        height: '100vh',
-        width: [null, null, '80%', null, '100%'],
-        px: '3vw',
-        pt: ['2vh', null, null, null, '10vh'],
-        pb: ['2vh', null, null, null, '10vh'],
-      }}
-    >
-      <Container
-        sx={{
-          width: 'auto',
-          position: [null, null, null, null, 'absolute'],
-          top: '10vh',
-          left: '70vw',
-          mb: '30px',
-          fontSize: [null, 3, 4, 5, 4],
-          color: 'primary',
-        }}
-      >
-        <Paragraph>Created:</Paragraph>
-        <Paragraph>Last update:</Paragraph>
-        <Paragraph>Chars:</Paragraph>
-      </Container>
+const DetailsPage = () => {
+  const [redirect, setRedirect] = useState(false);
+  const currentItem = useRecoilValue(currentItemState);
+
+  const handlePageClose = () => {
+    setRedirect(!redirect);
+  };
+
+  if (redirect) {
+    return <Redirect to={'/'} />;
+  }
+
+  return (
+    <>
       <Flex
         sx={{
-          position: 'relative',
-          height: ['82%', null, null, null, '100%'],
-          width: [null, null, null, null, '50%'],
-          flexDirection: 'column',
+          width: '100%',
           justifyContent: 'space-between',
+          position: 'absolute',
+          top: ['15px', null, '25px', '35px', '45px'],
+          px: '3vw',
         }}
       >
-        <Heading
-          as="h2"
-          sx={{
-            mt: [null, null, '20px', null, 0],
-            fontSize: [4, 5, 6, 7, 6],
-          }}
-        >
-          Title
-        </Heading>
-        <Textarea
-          sx={{
-            height: '70%',
-            fontSize: [null, 3, 4, 5, 4],
-          }}
-        >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur rerum dicta
-          pariatur. Rem, maxime ipsa?
-        </Textarea>
-        <Button
-          variant="primary"
-          sx={{
-            width: ['40%', null, null, null, '25%'],
-            m: '0 auto',
-            mt: [null, null, '20px'],
-            py: [null, '10px', '15px'],
-            fontSize: [null, 3, 4, 5, 4],
-          }}
-        >
-          Save
-        </Button>
-        <Container
-          sx={{
-            display: ['none', null, null, null, 'block'],
-            width: '85%',
-            position: 'absolute',
-            bottom: 0,
-            right: '-100%',
-            opacity: 0.4,
-          }}
-        >
-          <Image src={Illustration} />
-        </Container>
+        <Logo />
+        <CloseButton onClick={handlePageClose} />
       </Flex>
-    </Container>
-  </>
-);
+      <Flex
+        sx={{
+          height: '100vh',
+          width: '100%',
+          px: '3vw',
+          pt: ['2vh', null, null, null, '10vh'],
+          pb: ['2vh', null, null, null, '10vh'],
+          alignItems: 'center',
+          overflowX: 'hidden',
+        }}
+      >
+        <Flex
+          sx={{
+            position: 'relative',
+            left: [null, null, null, null, '5%'],
+            height: ['65%', null, null, null, '100%'],
+            width: '100%',
+            flexDirection: ['column', null, null, null, 'row'],
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            textAlign: [null, null, null, null, 'center'],
+          }}
+        >
+          <Flex
+            sx={{
+              width: [null, null, null, null, '620px'],
+              height: [null, null, null, null, '450px'],
+              position: 'relative',
+              p: [null, null, null, null, '120px 30px 0'],
+              borderRadius: '50%',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: [null, null, null, null, 'center'],
+              bg: [null, null, null, null, 'primary'],
+              color: [null, null, null, null, 'background'],
+            }}
+          >
+            <Heading
+              as="h2"
+              sx={{
+                fontSize: [4, 5, 6, 7, 6],
+                color: ['primary', null, null, null, 'background'],
+              }}
+            >
+              {currentItem.name ? currentItem.name : 'To Do'}
+            </Heading>
+            <Paragraph
+              sx={{
+                height: '70%',
+                width: ['100%', null, '80%'],
+                mt: '30px',
+                fontSize: [null, 3, 4, 5, 4],
+                overflow: 'hidden',
+              }}
+            >
+              {currentItem.title}
+            </Paragraph>
+          </Flex>
+          <Container
+            sx={{
+              width: ['100%', null, null, null, 'primary'],
+              opacity: 0.4,
+            }}
+          >
+            <Image sx={{ width: ['100%', null, null, null, '60%'] }} src={Illustration} />
+          </Container>
+        </Flex>
+      </Flex>
+    </>
+  );
+};
 
 export default DetailsPage;
