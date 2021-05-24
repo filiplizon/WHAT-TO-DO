@@ -7,7 +7,7 @@ import CloseButton from 'components/CloseButton/CloseButton';
 import Illustration from 'assets/images/illustration.svg';
 import Logo from 'components/Logo/Logo';
 
-const DetailsPage = () => {
+const ItemPage = () => {
   const [redirect, setRedirect] = useState(false);
   const currentItem = useRecoilValue(currentItemState);
 
@@ -105,4 +105,4 @@ const DetailsPage = () => {
   );
 };
 
-export default DetailsPage;
+export default ItemPage;
