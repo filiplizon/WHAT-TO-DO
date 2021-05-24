@@ -20,10 +20,19 @@
     ],
     "react/state-in-constructor": [1, "never"],
     "import/no-unresolved": 0,
-    "import/extensions": 0
+    "no-unused-expressions": 0,
+    "import/extensions": 0,
+    "camelcase": "off",
+    "import/no-unused-vars": 0,
+    "no-return-assign": 0,
+    "no-plusplus": 0,
+    "no-unneeded-ternary": 0,
+    "no-shadow": 0,
+    "no-undef": 0
   },
   "env": {
-    "jest": true
+    "jest": true,
+    "browser": true
   },
   "globals": {
     "window": true,
