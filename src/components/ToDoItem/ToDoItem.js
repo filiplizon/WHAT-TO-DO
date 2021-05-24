@@ -57,7 +57,7 @@ const ToDoItem = ({ item }) => {
   };
 
   if (redirect) {
-    return <Redirect to={`/${id}`} />;
+    return <Redirect to={`/WHAT-TO-DO/${id}`} />;
   }
 
   return (

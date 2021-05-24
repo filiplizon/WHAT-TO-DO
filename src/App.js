@@ -11,8 +11,8 @@ const App = () => (
     <ThemeProvider theme={theme}>
       <Switch>
         <React.Suspense fallback={<Preloader />}>
-          <Route exact path="/" component={UserPage} />
-          <Route path="/:id" component={ItemPage} />
+          <Route exact path="/WHAT-TO-DO" component={UserPage} />
+          <Route path="/WHAT-TO-DO/:id" component={ItemPage} />
         </React.Suspense>
       </Switch>
     </ThemeProvider>

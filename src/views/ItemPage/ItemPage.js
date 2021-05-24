@@ -16,7 +16,7 @@ const ItemPage = () => {
   };
 
   if (redirect) {
-    return <Redirect to={'/'} />;
+    return <Redirect to={'/WHAT-TO-DO'} />;
   }
 
   return (
