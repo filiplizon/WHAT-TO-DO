@@ -13,21 +13,23 @@ export default {
     regular: 400,
     bold: 700,
   },
+  text: {
+    heading: {
+      fontWeight: 'bold',
+      color: 'primary',
+    },
+  },
   buttons: {
     primary: {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       p: '5px',
-      borderRadius: '50%',
       bg: 'primary',
       color: 'background',
       outlineColor: 'primary',
       transitionDuration: '.2s',
       cursor: 'pointer',
-      '&:hover': {
-        transform: 'scale(1.1)',
-      },
     },
     secondary: {
       display: 'flex',
@@ -51,12 +53,15 @@ export default {
       borderBottom: '1px solid',
       borderColor: 'primary',
       outlineColor: 'primary',
+      boxShadow: 'primary',
     },
     textarea: {
       fontFamily: 'body',
       borderBottom: '1px solid',
       borderColor: 'primary',
       outlineColor: 'primary',
+      boxShadow: 'primary',
+      resize: 'none',
     },
   },
   shadows: {
