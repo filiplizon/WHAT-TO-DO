@@ -152,7 +152,7 @@ const ToDoItem = ({ item }) => {
           border: 'none',
           p: '30px',
           lineHeight: '100%',
-          fontSize: [null, 3, 3, 4],
+          fontSize: [null, 3, null, 4, 3],
           outlineColor: 'transparent',
         }}
       />
