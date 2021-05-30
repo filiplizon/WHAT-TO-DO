@@ -13,7 +13,7 @@ const Filter = () => {
   return (
     <Flex
       sx={{
-        width: '40%',
+        width: ['45%', null, '30%'],
         flexDirection: 'column',
       }}
     >

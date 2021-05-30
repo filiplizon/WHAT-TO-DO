@@ -5,7 +5,7 @@ const Logo = () => (
   <Box
     sx={{
       fontWeight: 'bold',
-      fontSize: [3, null, 4, 5],
+      fontSize: [2, 3, 4, 5, 4],
     }}
   >
     <Text>WHAT </Text>

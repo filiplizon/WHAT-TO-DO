@@ -6,7 +6,7 @@ import ToDoItem from 'components/ToDoItem/ToDoItem';
 
 const ToDoList = () => {
   const toDos = useRecoilValue(filteredTodoListState);
-  const toDosItems = toDos.map((item) => <ToDoItem key={item.id} item={item} />);
+  const toDoItems = toDos.map((item) => <ToDoItem key={item.id} item={item} />);
 
   return (
     <Flex
@@ -30,7 +30,7 @@ const ToDoList = () => {
           zIndex: 1,
         }}
       >
-        {toDosItems}
+        {toDoItems}
       </Grid>
     </Flex>
   );
