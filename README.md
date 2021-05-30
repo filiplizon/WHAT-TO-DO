@@ -2,7 +2,7 @@
 
 ## General Info 
 
-Simple CRUD app.
+Simple CRUD app. The application communicates with the REST API https://gorest.co.in.
 
 ## Technologies 
 
