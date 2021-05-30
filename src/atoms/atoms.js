@@ -61,20 +61,3 @@ export const toDoListDetailsState = selector({
     };
   },
 });
-
-export const currentItemState = atom({
-  key: 'currentItemState',
-  default: {},
-});
-
-export const charCountState = atom({
-  key: 'charCountState',
-  default: selector({
-    key: 'charCountSelector',
-    get: ({ get }) => {
-      const text = get(currentItemState);
-
-      return text.length;
-    },
-  }),
-});
