@@ -1,23 +1,12 @@
 import React, { useState } from 'react';
-import { useSetRecoilState } from 'recoil';
-import { searchInputValueState, todoListFilterState } from 'atoms/atoms';
-import { Grid, Input, Button } from 'theme-ui';
+import { Grid, Button } from 'theme-ui';
+import Logo from 'components/Logo/Logo';
+import Input from 'components/SearchInput/SearchInput';
 import DetailsPanel from 'components/DetailsPanel/DetailsPanel';
 import { BsArrowDown as ArrowIcon } from 'react-icons/bs';
-import Logo from 'components/Logo/Logo';
 
 const Navigation = () => {
   const [isOpen, setDetailsBoxOpen] = useState(false);
-  const setSearchInput = useSetRecoilState(searchInputValueState);
-  const setFilter = useSetRecoilState(todoListFilterState);
-
-  const handleInputChange = ({ target: { value } }) => {
-    setSearchInput(value);
-  };
-
-  const updateFilter = ({ target: { name } }) => {
-    setFilter(name);
-  };
 
   return (
     <>
@@ -39,23 +28,14 @@ const Navigation = () => {
         }}
       >
         <Logo />
-        <Input
-          name="Search by content"
-          onClick={updateFilter}
-          onChange={handleInputChange}
-          placeholder="Search"
-          sx={{
-            width: ['100%', null, null, null, '60%'],
-            fontSize: [2, null, 4],
-          }}
-        />
+        <Input />
         <Button
           onClick={() => setDetailsBoxOpen(!isOpen)}
           sx={{
-            width: ['40px', null, '45px', '50px'],
-            height: ['40px', null, '45px', '50px'],
+            width: ['30px', '35px', '40px', '55px', '40px'],
+            height: ['30px', '35px', '40px', '55px', '40px'],
             borderRadius: '50%',
-            fontSize: [5, 7],
+            fontSize: [3, 5, 6],
             transform: isOpen ? 'rotate(180deg)' : 'rotate(0)',
             transition: 'transform .3s ease-in-out',
           }}
