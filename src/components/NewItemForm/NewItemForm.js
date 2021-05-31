@@ -18,14 +18,13 @@ const NewItemForm = ({ toggleNewItemBarVisibilityFn }) => {
   };
 
   const addNewToDo = async () => {
-    const item = {
-      user_id: getId(),
-      name: inputValue ? inputValue : 'TO DO',
-      title: textAreaValue,
-      completed: false,
-    };
-
     if (textAreaValue) {
+      const item = {
+        user_id: getId(),
+        name: inputValue ? inputValue : 'TO DO',
+        title: textAreaValue,
+        completed: false,
+      };
       const newItem = await sendRequest('', 'POST', item);
       setToDoList((prevState) => [newItem, ...prevState]);
       setTextAreaValue('');
