@@ -1,5 +1,5 @@
 const myHeader = new Headers({
-  Authorization: `Bearer ${process.env.TOKEN}`,
+  Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
   'Content-type': 'application/json',
 });
 
@@ -10,6 +10,7 @@ export const sendRequest = async (id, method, object) => {
     body: JSON.stringify(object),
   });
   const { data } = await response.json();
+  console.log(data);
   return data;
 };
 
